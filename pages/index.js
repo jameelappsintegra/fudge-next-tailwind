@@ -3,6 +3,27 @@ import Image from 'next/image';
 import Card from '../components/common/card';
 import styles from '../styles/Home.module.css';
 
+const cardContent = [
+  {
+    nameText: 'Sarah',
+    nameColor: 'text-red-700',
+    cardBg: 'bg-red-100',
+    cardImg: 'https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg',
+  },
+  {
+    nameText: 'Dayan',
+    nameColor: 'text-blue-700',
+    cardBg: 'bg-blue-100',
+    cardImg:
+      'https://tailwindcss.com/_next/static/media/classic-utility-jacket.0f108046e151c8576017eaf383406fe6.jpg',
+  },
+  {
+    nameText: 'Sarah Dayan',
+    nameColor: 'text-red-700',
+    cardBg: 'bg-green-100',
+    cardImg: 'https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg',
+  },
+];
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -13,21 +34,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Card nameColor="text-red-700" cardBg="bg-red-100" />
-        <Card nameColor="text-blue-700" cardBg="bg-blue-100" />
+        {cardContent &&
+          cardContent.map((item, index) => (
+            <Card
+              cardImg={item?.cardImg}
+              nameText={item?.nameText}
+              nameColor={item?.nameColor}
+              cardBg={item?.cardBg}
+              key={index}
+            />
+          ))}
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        Powered by{' '}
+        <span className={styles.logo}>
+          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+        </span>
       </footer>
     </div>
   );

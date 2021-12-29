@@ -1,11 +1,11 @@
 const Card = (props) => {
-  const { nameColor, cardBg } = props;
+  const { cardImg, nameText, nameColor, cardBg } = props;
   return (
     <div className="p-4">
       <figure className={`${cardBg} md:flex  rounded-xl p-8 md:p-0 dark:bg-gray-800`}>
         <img
           className="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-          src="https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg"
+          src={cardImg}
           alt=""
           width="384"
           height="512"
@@ -18,9 +18,15 @@ const Card = (props) => {
             </p>
           </blockquote>
           <figcaption className="font-medium">
-            <div className={`${nameColor} dark:text-sky-400`}>Sarah Dayan</div>
+            <div className={`${nameColor} dark:text-sky-400`}>{nameText}</div>
             <div className="text-gray-700 dark:text-gray-500">Staff Engineer, Algolia</div>
           </figcaption>
+          <button
+            type="button"
+            className="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
+          >
+            Check availability
+          </button>
         </div>
       </figure>
     </div>
