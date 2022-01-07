@@ -2,7 +2,7 @@ export const ExploreIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="w-8 h-8"
+      className="w-8 h-8"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -27,7 +27,7 @@ export const CustomIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="w-8 h-8"
+      className="w-8 h-8"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -46,7 +46,7 @@ export const CleanDesignIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="w-8 h-8"
+      className="w-8 h-8"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
